@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-11-06T11-31-58-933Z-162278",
+  "project": "Drink Smart Lazy-loading Issue Check",
+  "createdAt": "2026-11-06T11:31:58.935Z",
+  "platform": "linux x64",
+  "browser": "141.0.7390.37",
+  "policy": {
+    "geometryTolerancePx": 2,
+    "pixelThreshold": 0.1,
+    "maxDiffPixelRatio": 0.01,
+    "styles": [
+      "font-family",
+      "font-size",
+      "font-weight",
+      "line-height",
+      "padding",
+      "margin",
+      "color",
+      "background-color",
+      "display",
+      "object-fit"
+    ]
+  },
+  "pages": [
+    {
+      "pageId": "p0-desktop",
+      "stage": "https://stage-bs-drinksmart.sites-beamsuntory.com/",
+      "prod": "https://www.drinksmart.com/",
+      "device": "desktop",
+      "componentScan": {
+        "stage": {
+          "status": "completed",
+          "attempt": 2,
+          "components": [
+            {
+              "id": "c0",
+              "type": "semantic:header",
+              "heading": "",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 0,
+                "width": 1425,
+                "height": 72
+              }
+            },
+            {
+              "id": "c1",
+              "type": "homepage_header_section",
+              "heading": "WELCOME TO DRINK SMART®",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 72,
+                "width": 1425,
+                "height": 656
+              }
+            },
+            {
+              "id": "c2",
+              "type": "copy_image",
+              "heading": "RESPONSIBILITY ULTIMATELY STARTS WITH EACH OF US",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 728,
+                "width": 1425,
+                "height": 488
+              }
+            },
+            {
+              "id": "c3",
+              "type": "copy_image",
+              "heading": "",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 1216,
+                "width": 1425,
+                "height": 563
+              }
+            },
+            {
+              "id": "c4",
+              "type": "expert_review_sub_section",
+              "heading": "",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 1779,
+                "width": 1425,
+                "height": 504
+              }
+            },
+            {
+              "id": "c5",
+              "type": "semantic:footer",
+              "heading": "",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > footer:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 2283,
+                "width": 1425,
+                "height": 736
+              }
+            }
+          ],
+          "captureStatus": "inconclusive",
+          "captureError": "COMPONENT_CHANGED_DURING_CAPTURE"
+        },
+        "prod": {
+          "status": "completed",
+          "attempt": 2,
+          "components": [
+            {
+              "id": "c0",
+              "type": "semantic:header",
+              "heading": "",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 0,
+                "width": 1425,
+                "height": 72
+              }
+            },
+            {
+              "id": "c1",
+              "type": "homepage_header_section",
+              "heading": "WELCOME TO DRINK SMART®",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 72,
+                "width": 1425,
+                "height": 656
+              }
+            },
+            {
+              "id": "c2",
+              "type": "copy_image",
+              "heading": "RESPONSIBILITY ULTIMATELY STARTS WITH EACH OF US",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 728,
+                "width": 1425,
+                "height": 488
+              }
+            },
+            {
+              "id": "c3",
+              "type": "copy_image",
+              "heading": "",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 1216,
+                "width": 1425,
+                "height": 563
+              }
+            },
+            {
+              "id": "c4",
+              "type": "expert_review_sub_section",
+              "heading": "",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 1779,
+                "width": 1425,
+                "height": 424
+              }
+            },
+            {
+              "id": "c5",
+              "type": "semantic:footer",
+              "heading": "",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > footer:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 2203,
+                "width": 1425,
+                "height": 736
+              }
+            }
+          ],
+          "captureStatus": "inconclusive",
+          "captureError": "COMPONENT_CHANGED_DURING_CAPTURE"
+        }
+      },
+      "componentMatchingStatus": "not_run",
+      "componentMatches": [],
+      "status": "inconclusive",
+      "capture": {
+        "stage": "COMPONENT_CHANGED_DURING_CAPTURE",
+        "prod": "COMPONENT_CHANGED_DURING_CAPTURE"
+      },
+      "captureDetails": {
+        "stage": {
+          "status": "inconclusive",
+          "code": "COMPONENT_CHANGED_DURING_CAPTURE",
+          "httpStatus": 200,
+          "finalUrl": "https://stage-bs-drinksmart.sites-beamsuntory.com/",
+          "blockedNavigation": null,
+          "attempts": 2
+        },
+        "prod": {
+          "status": "inconclusive",
+          "code": "COMPONENT_CHANGED_DURING_CAPTURE",
+          "httpStatus": 200,
+          "finalUrl": "https://www.drinksmart.com/",
+          "blockedNavigation": null,
+          "attempts": 2
+        }
+      }
+    }
+  ],
+  "findings": [],
+  "evidence": {},
+  "snapshots": [],
+  "warnings": [],
+  "capabilities": {
+    "paragraphs": true,
+    "semanticFallback": true,
+    "ai": false,
+    "interactions": false
+  },
+  "status": "inconclusive",
+  "exitCode": 3,
+  "summary": {
+    "pages": 1,
+    "findings": 0,
+    "high": 0,
+    "inconclusive": 1
+  }
+}

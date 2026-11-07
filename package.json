@@ -1,0 +1,47 @@
+{
+  "name": "drupal-ui-regression",
+  "version": "1.2.0",
+  "description": "Read-only Drupal Paragraph visual regression CLI",
+  "main": "src/runner.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "validate": "node src/cli.js validate",
+    "discover": "node src/cli.js discover",
+    "test:visual": "node src/cli.js run",
+    "report:open": "node src/cli.js report",
+    "fixtures": "node fixtures/server.js",
+    "test": "node --test tests/*.test.js",
+    "test:integration": "node --test tests/integration.test.js",
+    "test:unit": "node --test tests/discovery.test.js tests/match.test.js tests/compare.test.js tests/report.test.js tests/dom.test.js tests/cli.test.js tests/ui.test.js tests/browser-auth.test.js tests/sso-ui.test.js",
+    "demo:report": "node scripts/make-demo.js",
+    "start": "node src/ui-server.js --open",
+    "format": "prettier --write src ui fixtures tests scripts configs schemas *.md .github .prettierrc.json package.json",
+    "format:check": "prettier --check src ui fixtures tests scripts configs schemas *.md .github .prettierrc.json package.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "ajv": "8.20.0",
+    "fast-xml-parser": "5.12.0",
+    "pixelmatch": "8.0.0",
+    "playwright": "1.56.1",
+    "sharp": "0.35.5",
+    "yaml": "2.9.1"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "drupal-ui": "src/cli.js"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0",
+    "prettier": "3.6.2"
+  },
+  "private": true
+}

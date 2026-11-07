@@ -1,0 +1,36 @@
+schemaVersion: 1
+project: Client Drupal site
+mode: sitemap
+sitemapUrl: https://stage.example.com/sitemap.xml
+environments:
+  stage:
+    baseUrl: https://stage.example.com
+    auth: { type: httpBasic, usernameEnv: STAGE_USER, passwordEnv: STAGE_PASS }
+    assetOrigins: [] # Add exact CDN origins if needed.
+  prod:
+    baseUrl: https://www.example.com
+    auth: { type: none }
+    assetOrigins: []
+devices:
+  desktop: { width: 1440, height: 900, dpr: 1 }
+  mobile: { width: 390, height: 844, dpr: 1, isMobile: true }
+limits: { maxPages: 5, concurrency: 2, sitemapDepth: 3, retries: 1, timeoutMs: 15000 }
+mapping:
+  overrides: {}
+  trailingSlash: preserve
+  include: []
+  exclude: ['^/user', '^/admin']
+detection:
+  drupalParagraphs: true
+  semanticFallback: true
+  customSelectors: []
+capture:
+  masks: []
+  redactSelectors: []
+  settleMs: 150
+  maxImagePixels: 16000000
+comparison:
+  geometryTolerancePx: 2
+  pixelThreshold: 0.1
+  maxDiffPixelRatio: 0.01
+report: { offlineHtml: true, includeScreenshots: true }

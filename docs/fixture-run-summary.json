@@ -1,0 +1,14 @@
+{
+  "status": "inconclusive",
+  "exitCode": 3,
+  "summary": {
+    "pages": 10,
+    "findings": 0,
+    "high": 0,
+    "inconclusive": 10
+  },
+  "warnings": [
+    "Chromium could not launch. Install the pinned browser and OS dependencies.",
+    "External or invalid sitemap page rejected"
+  ]
+}

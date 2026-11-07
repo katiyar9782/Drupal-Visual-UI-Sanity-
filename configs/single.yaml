@@ -1,0 +1,8 @@
+schemaVersion: 1
+project: Single page local fixture
+mode: single
+allowHttp: true
+paths: ['/home']
+environments:
+  stage: { baseUrl: 'http://127.0.0.1:4171' }
+  prod: { baseUrl: 'http://127.0.0.1:4172' }

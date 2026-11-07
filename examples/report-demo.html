@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'"
+    />
+    <title>Drupal • Regression report</title>
+    <style>
+      :root {
+        font: 16px system-ui;
+        color: #dce8f3;
+        background: #091321;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      header {
+        padding: 42px 5vw 24px;
+        background: linear-gradient(115deg, #112a45, #123c47);
+      }
+      h1 {
+        font-size: 36px;
+        margin: 8px 0;
+      }
+      p {
+        line-height: 1.6;
+      }
+      .eyebrow {
+        color: #73e7d0;
+        letter-spacing: 3px;
+        font-size: 12px;
+      }
+      main {
+        max-width: 1500px;
+        margin: auto;
+        padding: 24px 5vw;
+      }
+      .stats {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .stat {
+        background: #142439;
+        border: 1px solid #294158;
+        border-radius: 12px;
+        padding: 18px;
+        min-width: 160px;
+      }
+      .stat strong {
+        display: block;
+        font-size: 28px;
+      }
+      .toolbar {
+        position: sticky;
+        top: 0;
+        background: #091321;
+        padding: 18px 0;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        z-index: 2;
+      }
+      input,
+      select,
+      button {
+        background: #192d43;
+        color: #fff;
+        border: 1px solid #52697f;
+        border-radius: 6px;
+        padding: 10px;
+        font: inherit;
+      }
+      input {
+        flex: 1;
+      }
+      button {
+        cursor: pointer;
+      }
+      article {
+        border: 1px solid #294158;
+        border-radius: 12px;
+        padding: 22px;
+        margin: 18px 0;
+        background: #102034;
+      }
+      .badge {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 20px;
+        background: #25425c;
+        margin-right: 8px;
+      }
+      .high {
+        background: #7b3043;
+      }
+      .medium {
+        background: #735b28;
+      }
+      .review {
+        background: #534678;
+      }
+      .images {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+      figure {
+        margin: 12px 0;
+        overflow: auto;
+        background: #08121d;
+        padding: 10px;
+        border-radius: 8px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      figcaption {
+        font-size: 12px;
+        margin-bottom: 10px;
+        color: #a8c7df;
+      }
+      pre {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        font-size: 12px;
+      }
+      small,
+      .muted {
+        color: #a8bbce;
+      }
+      a {
+        color: #74dfcf;
+      }
+      summary {
+        cursor: pointer;
+        padding: 12px 0;
+      }
+      .empty {
+        padding: 40px;
+        border: 1px dashed #52697f;
+      }
+      footer {
+        padding: 30px 5vw;
+        color: #a8bbce;
+      }
+      @media (max-width: 800px) {
+        .images {
+          grid-template-columns: 1fr;
+        }
+        h1 {
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="eyebrow">DRUPAL / VISUAL QUALITY</div>
+      <h1>Regression evidence</h1>
+      <p id="subtitle"></p>
+      <div id="stats" class="stats"></div>
+    </header>
+    <main>
+      <div class="toolbar">
+        <input
+          id="search"
+          aria-label="Search findings"
+          placeholder="Search page, component or finding"
+        /><select id="severity" aria-label="Severity">
+          <option value="">All severities</option>
+          <option>high</option>
+          <option>medium</option>
+          <option>low</option>
+          <option>review</option></select
+        ><select id="device" aria-label="Device">
+          <option value="">All devices</option></select
+        ><select id="category" aria-label="Category">
+          <option value="">All categories</option></select
+        ><button id="export">Export JSON</button>
+      </div>
+      <p id="count" aria-live="polite"></p>
+      <div id="findings"></div>
+      <details>
+        <summary>Run metadata and capture status</summary>
+        <pre id="meta"></pre>
+      </details>
+      <details>
+        <summary>Architecture and future extensions</summary>
+        <p>
+          Config → sitemap → isolated capture → Paragraph discovery → hierarchy matching →
+          independent comparators → offline report.
+        </p>
+        <p>
+          Versioned contracts and detector/matcher/comparator interfaces allow future device
+          profiles, action recipes, AI-assisted review and historical storage.
+        </p>
+      </details>
+    </main>
+    <footer>
+      Production is the reference; Stage is the candidate. Severity and match confidence are
+      independent. Review intentional changes before treating them as defects.
+    </footer>
+    <script id="data" type="application/json">
+      {"schemaVersion":1,"project":"Report interaction demo","simulated":true,"createdAt":"2026-11-06T06:00:08.444Z","status":"simulated","summary":{"pages":1,"findings":2,"high":1,"inconclusive":0},"browser":"No browser — synthetic PNG comparator demonstration","platform":"linux","policy":{"pixelThreshold":0.1},"pages":[],"warnings":["Illustrative blocks, not website captures."],"evidence":{"demo":{"reference":"data:image/png;base64,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","candidate":"data:image/png;base64,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","diff":"data:image/png;base64,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"}},"findings":[{"id":"f0","page":"/illustration","device":"desktop","component":"Hero illustration","evidenceId":"demo","category":"visual","severity":"high","confidence":1,"expected":0,"actual":0.03321070234113713,"explanation":"Synthetic images were compared by the real pixel engine. This does not validate browser capture."},{"id":"f1","page":"/illustration","device":"mobile","component":"Example review","category":"ambiguous","severity":"review","confidence":0.4,"explanation":"Simulated ambiguous match to demonstrate filters."}]}
+    </script>
+    <script>
+      const R = JSON.parse(document.getElementById('data').textContent),
+        q = (s) => document.querySelector(s),
+        node = (tag, text, cls) => {
+          const n = document.createElement(tag);
+          if (text !== undefined) n.textContent = text;
+          if (cls) n.className = cls;
+          return n;
+        };
+      q('#subtitle').textContent =
+        R.project +
+        ' · ' +
+        R.status +
+        ' · ' +
+        R.createdAt +
+        (R.simulated ? ' · SIMULATED DATA — not a browser run' : '');
+      for (const [k, v] of Object.entries(R.summary)) {
+        const s = node('div', undefined, 'stat');
+        s.append(node('strong', v), node('span', k));
+        q('#stats').append(s);
+      }
+      for (const [id, values] of [
+        ['device', [...new Set(R.findings.map((f) => f.device))]],
+        ['category', [...new Set(R.findings.map((f) => f.category))]],
+      ])
+        for (const v of values) {
+          const o = node('option', v);
+          o.value = v;
+          q('#' + id).append(o);
+        }
+      q('#meta').textContent = JSON.stringify(
+        {
+          schemaVersion: R.schemaVersion,
+          browser: R.browser,
+          platform: R.platform,
+          policy: R.policy,
+          pages: R.pages,
+          warnings: R.warnings,
+        },
+        null,
+        2,
+      );
+      function render() {
+        const filtered = R.findings.filter(
+          (f) =>
+            (!q('#severity').value || f.severity === q('#severity').value) &&
+            (!q('#device').value || f.device === q('#device').value) &&
+            (!q('#category').value || f.category === q('#category').value) &&
+            JSON.stringify(f).toLowerCase().includes(q('#search').value.toLowerCase()),
+        );
+        q('#count').textContent = filtered.length + ' of ' + R.findings.length + ' findings';
+        q('#findings').replaceChildren();
+        for (const f of filtered) {
+          const a = node('article');
+          a.append(
+            node('span', f.severity, 'badge ' + f.severity),
+            node('span', f.category, 'badge'),
+            node('small', Math.round(f.confidence * 100) + '% match confidence'),
+            node('h2', f.component + ' · ' + f.page),
+            node('p', f.explanation),
+          );
+          const e = R.evidence[f.evidenceId];
+          if (e) {
+            const imgs = node('div', undefined, 'images');
+            for (const [key, label] of [
+              ['reference', 'Production / reference'],
+              ['candidate', 'Stage / candidate'],
+              ['diff', 'Difference / pink highlights'],
+            ])
+              if (e[key]) {
+                const fig = node('figure'),
+                  im = node('img');
+                im.src = e[key];
+                im.alt = label + ' ' + f.component;
+                im.loading = 'lazy';
+                fig.append(node('figcaption', label), im);
+                imgs.append(fig);
+              }
+            a.append(imgs);
+          }
+          const details = node('details');
+          details.append(
+            node('summary', 'Inspect DOM / CSS / comparison evidence'),
+            node(
+              'pre',
+              JSON.stringify(
+                { expected: f.expected, actual: f.actual, details: f.details },
+                null,
+                2,
+              ),
+            ),
+          );
+          a.append(details);
+          q('#findings').append(a);
+        }
+        if (!filtered.length)
+          q('#findings').append(
+            node(
+              'div',
+              R.findings.length
+                ? 'No findings match these filters.'
+                : R.status === 'clean'
+                  ? 'No differences above policy thresholds.'
+                  : 'No confirmed differences. Inspect capture status; this is not a clean result.',
+              'empty',
+            ),
+          );
+      }
+      for (const id of ['search', 'severity', 'device', 'category'])
+        q('#' + id).addEventListener('input', render);
+      q('#export').onclick = () => {
+        const a = document.createElement('a'),
+          url = URL.createObjectURL(
+            new Blob([JSON.stringify(R, null, 2)], { type: 'application/json' }),
+          );
+        a.href = url;
+        a.download = 'results.json';
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      };
+      render();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+schemaVersion: 1
+project: Drupal local fixtures
+mode: sitemap
+allowHttp: true
+sitemapUrl: http://127.0.0.1:4171/sitemap.xml
+environments:
+  stage: { baseUrl: 'http://127.0.0.1:4171' }
+  prod: { baseUrl: 'http://127.0.0.1:4172' }
+limits: { maxPages: 5, concurrency: 2, timeoutMs: 10000, retries: 1 }

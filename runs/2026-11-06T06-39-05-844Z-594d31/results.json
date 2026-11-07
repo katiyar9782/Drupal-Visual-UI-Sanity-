@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-11-06T06-39-05-844Z-594d31",
+  "project": "Local Drupal sample",
+  "createdAt": "2026-11-06T06:39:05.846Z",
+  "platform": "linux x64",
+  "browser": "141.0.7390.37",
+  "policy": {
+    "geometryTolerancePx": 2,
+    "pixelThreshold": 0.1,
+    "maxDiffPixelRatio": 0.01,
+    "styles": [
+      "font-family",
+      "font-size",
+      "font-weight",
+      "line-height",
+      "padding",
+      "margin",
+      "color",
+      "background-color",
+      "display",
+      "object-fit"
+    ]
+  },
+  "pages": [
+    {
+      "pageId": "p0-desktop",
+      "stage": "https://stage-bs-drinksmart.sites-beamsuntory.com/",
+      "prod": "https://www.drinksmart.com/",
+      "device": "desktop",
+      "status": "inconclusive",
+      "capture": {
+        "stage": "AUTH_REQUIRED",
+        "prod": "HTTP_STATUS"
+      }
+    },
+    {
+      "pageId": "p1-desktop",
+      "stage": "https://stage-bs-drinksmart.sites-beamsuntory.com/education-and-resources/preventing-underage-drinking",
+      "prod": "https://www.drinksmart.com/education-and-resources/preventing-underage-drinking",
+      "device": "desktop",
+      "status": "inconclusive",
+      "capture": {
+        "stage": "AUTH_REQUIRED",
+        "prod": "HTTP_STATUS"
+      }
+    },
+    {
+      "pageId": "p2-desktop",
+      "stage": "https://stage-bs-drinksmart.sites-beamsuntory.com/education-and-resources/resources-for-parents-and-young-adults",
+      "prod": "https://www.drinksmart.com/education-and-resources/resources-for-parents-and-young-adults",
+      "device": "desktop",
+      "status": "inconclusive",
+      "capture": {
+        "stage": "AUTH_REQUIRED",
+        "prod": "HTTP_STATUS"
+      }
+    },
+    {
+      "pageId": "p3-desktop",
+      "stage": "https://stage-bs-drinksmart.sites-beamsuntory.com/get-the-facts/alcohol-and-body",
+      "prod": "https://www.drinksmart.com/get-the-facts/alcohol-and-body",
+      "device": "desktop",
+      "status": "inconclusive",
+      "capture": {
+        "stage": "AUTH_REQUIRED",
+        "prod": "HTTP_STATUS"
+      }
+    },
+    {
+      "pageId": "p4-desktop",
+      "stage": "https://stage-bs-drinksmart.sites-beamsuntory.com/education-and-resources/responsible-retailing",
+      "prod": "https://www.drinksmart.com/education-and-resources/responsible-retailing",
+      "device": "desktop",
+      "status": "inconclusive",
+      "capture": {
+        "stage": "AUTH_REQUIRED",
+        "prod": "HTTP_STATUS"
+      }
+    }
+  ],
+  "findings": [],
+  "evidence": {},
+  "snapshots": [],
+  "warnings": [],
+  "capabilities": {
+    "paragraphs": true,
+    "semanticFallback": true,
+    "ai": false,
+    "interactions": false
+  },
+  "status": "inconclusive",
+  "exitCode": 3,
+  "summary": {
+    "pages": 5,
+    "findings": 0,
+    "high": 0,
+    "inconclusive": 5
+  }
+}

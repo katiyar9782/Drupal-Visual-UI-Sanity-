@@ -1,0 +1,36 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> drupal-ui-regression@1.2.0 test:unit
+> node --test tests/discovery.test.js tests/match.test.js tests/compare.test.js tests/report.test.js tests/dom.test.js tests/cli.test.js tests/ui.test.js tests/browser-auth.test.js tests/sso-ui.test.js
+
+✔ SSO scope keeps target state and excludes Microsoft tokens; exact origins only (1.35049ms)
+✔ SSO lifecycle verifies access, enforces origin/expiry, disconnects and never exposes state in status (2.624245ms)
+✔ SSO guards navigation, keeps failed verification unconnected, cleans launch errors (0.650608ms)
+✔ SSO access verification uses cookie-authenticated local sitemap and rejects unauthenticated/redirect access (48.833272ms)
+✔ SSO runtime session reaches capture context without entering config; navigation stays restricted (3.115272ms)
+✔ M7 CLI validates config and writes inconclusive report on unavailable browser (1343.522225ms)
+✔ M5 pixel comparison preserves size differences and detects color mutation (28.892876ms)
+✔ M5 CSS, content, geometry, broken asset channels remain independent (0.829918ms)
+✔ M0 rejects unsafe and malformed config (3.794904ms)
+✔ M1 maps URL paths/query safely and applies overrides/slashes (0.537118ms)
+✔ M1 recursive sitemap, deduplication, limits, rejection, malformed XML and auth (71.280916ms)
+✔ M3 detector DOM logic (synthetic geometry; not browser rendering) (170.985348ms)
+✔ M6 standalone report scripts and filters execute in jsdom (54.915098ms)
+✔ M4 insertion/reorder never shifts existing matches (1.632995ms)
+✔ M4 repeated identical headings remain ambiguous (0.394804ms)
+✔ M4 changed heading with unique type pairs; removal is explicit (0.215413ms)
+✔ M6 report embeds data safely without external dependencies (2.253667ms)
+✔ M7 exit status distinguishes uncertainty from regressions (0.251178ms)
+✔ SSO UI buttons/API lifecycle with injected auth adapter; no credentials needed for browser auth (336.442491ms)
+✔ SSO API launch failure returns actionable message, does not expose native exception (8.313791ms)
+✔ UI builds validated config without storing credentials in config (3.720603ms)
+✔ UI HTTP API: local protection, fixtures discovery, report/history and secret exclusion (2143.765565ms)
+✔ UI browser DOM: sample button, form fetch and displayed page pairs (jsdom) (1305.896735ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4310.802617

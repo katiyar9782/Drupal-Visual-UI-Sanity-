@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; img-src data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; connect-src 'none'"
+    />
+    <title>Drupal • Regression report</title>
+    <style>
+      :root {
+        font: 16px system-ui;
+        color: #dce8f3;
+        background: #091321;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      header {
+        padding: 42px 5vw 24px;
+        background: linear-gradient(115deg, #112a45, #123c47);
+      }
+      h1 {
+        font-size: 36px;
+        margin: 8px 0;
+      }
+      p {
+        line-height: 1.6;
+      }
+      .eyebrow {
+        color: #73e7d0;
+        letter-spacing: 3px;
+        font-size: 12px;
+      }
+      main {
+        max-width: 1500px;
+        margin: auto;
+        padding: 24px 5vw;
+      }
+      .stats {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .stat {
+        background: #142439;
+        border: 1px solid #294158;
+        border-radius: 12px;
+        padding: 18px;
+        min-width: 160px;
+      }
+      .stat strong {
+        display: block;
+        font-size: 28px;
+      }
+      .toolbar {
+        position: sticky;
+        top: 0;
+        background: #091321;
+        padding: 18px 0;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        z-index: 2;
+      }
+      input,
+      select,
+      button {
+        background: #192d43;
+        color: #fff;
+        border: 1px solid #52697f;
+        border-radius: 6px;
+        padding: 10px;
+        font: inherit;
+      }
+      input {
+        flex: 1;
+      }
+      button {
+        cursor: pointer;
+      }
+      article {
+        border: 1px solid #294158;
+        border-radius: 12px;
+        padding: 22px;
+        margin: 18px 0;
+        background: #102034;
+      }
+      .badge {
+        display: inline-block;
+        padding: 4px 10px;
+        border-radius: 20px;
+        background: #25425c;
+        margin-right: 8px;
+      }
+      .high {
+        background: #7b3043;
+      }
+      .medium {
+        background: #735b28;
+      }
+      .review {
+        background: #534678;
+      }
+      .images {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+      figure {
+        margin: 12px 0;
+        overflow: auto;
+        background: #08121d;
+        padding: 10px;
+        border-radius: 8px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      figcaption {
+        font-size: 12px;
+        margin-bottom: 10px;
+        color: #a8c7df;
+      }
+      pre {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+        font-size: 12px;
+      }
+      small,
+      .muted {
+        color: #a8bbce;
+      }
+      a {
+        color: #74dfcf;
+      }
+      summary {
+        cursor: pointer;
+        padding: 12px 0;
+      }
+      .empty {
+        padding: 40px;
+        border: 1px dashed #52697f;
+      }
+      footer {
+        padding: 30px 5vw;
+        color: #a8bbce;
+      }
+      @media (max-width: 800px) {
+        .images {
+          grid-template-columns: 1fr;
+        }
+        h1 {
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="eyebrow">DRUPAL / VISUAL QUALITY</div>
+      <h1>Regression evidence</h1>
+      <p id="subtitle"></p>
+      <div id="stats" class="stats"></div>
+    </header>
+    <main>
+      <div class="toolbar">
+        <input
+          id="search"
+          aria-label="Search findings"
+          placeholder="Search page, component or finding"
+        /><select id="severity" aria-label="Severity">
+          <option value="">All severities</option>
+          <option>high</option>
+          <option>medium</option>
+          <option>low</option>
+          <option>review</option></select
+        ><select id="device" aria-label="Device">
+          <option value="">All devices</option></select
+        ><select id="category" aria-label="Category">
+          <option value="">All categories</option></select
+        ><button id="export">Export JSON</button>
+      </div>
+      <p id="count" aria-live="polite"></p>
+      <div id="findings"></div>
+      <details>
+        <summary>Run metadata and capture status</summary>
+        <pre id="meta"></pre>
+      </details>
+      <details>
+        <summary>Architecture and future extensions</summary>
+        <p>
+          Config → sitemap → isolated capture → Paragraph discovery → hierarchy matching →
+          independent comparators → offline report.
+        </p>
+        <p>
+          Versioned contracts and detector/matcher/comparator interfaces allow future device
+          profiles, action recipes, AI-assisted review and historical storage.
+        </p>
+      </details>
+    </main>
+    <footer>
+      Production is the reference; Stage is the candidate. Severity and match confidence are
+      independent. Review intentional changes before treating them as defects.
+    </footer>
+    <script id="data" type="application/json">
+      {"schemaVersion":1,"runId":"2026-11-06T07-45-42-346Z-242d71","project":"Local Drupal sample","createdAt":"2026-11-06T07:45:42.348Z","platform":"linux x64","browser":"141.0.7390.37","policy":{"geometryTolerancePx":2,"pixelThreshold":0.1,"maxDiffPixelRatio":0.01,"styles":["font-family","font-size","font-weight","line-height","padding","margin","color","background-color","display","object-fit"]},"pages":[{"pageId":"p0-desktop","stage":"https://stage-bs-drinksmart.sites-beamsuntory.com/","prod":"https://www.drinksmart.com/","device":"desktop","componentScan":{"stage":{"status":"not_run","attempt":null,"components":[],"captureStatus":"inconclusive","captureError":"AUTH_REQUIRED","reason":"Page navigation or stabilization failed before component detection."},"prod":{"status":"not_run","attempt":null,"components":[],"captureStatus":"inconclusive","captureError":"HTTP_STATUS","reason":"Page navigation or stabilization failed before component detection."}},"componentMatchingStatus":"not_run","componentMatches":[],"status":"inconclusive","capture":{"stage":"AUTH_REQUIRED","prod":"HTTP_STATUS"}}],"findings":[],"evidence":{},"snapshots":[],"warnings":[],"capabilities":{"paragraphs":true,"semanticFallback":true,"ai":false,"interactions":false},"status":"inconclusive","exitCode":3,"summary":{"pages":1,"findings":0,"high":0,"inconclusive":1}}
+    </script>
+    <script>
+      const R = JSON.parse(document.getElementById('data').textContent),
+        q = (s) => document.querySelector(s),
+        node = (tag, text, cls) => {
+          const n = document.createElement(tag);
+          if (text !== undefined) n.textContent = text;
+          if (cls) n.className = cls;
+          return n;
+        };
+      q('#subtitle').textContent =
+        R.project +
+        ' · ' +
+        R.status +
+        ' · ' +
+        R.createdAt +
+        (R.simulated ? ' · SIMULATED DATA — not a browser run' : '');
+      for (const [k, v] of Object.entries(R.summary)) {
+        const s = node('div', undefined, 'stat');
+        s.append(node('strong', v), node('span', k));
+        q('#stats').append(s);
+      }
+      for (const [id, values] of [
+        ['device', [...new Set(R.findings.map((f) => f.device))]],
+        ['category', [...new Set(R.findings.map((f) => f.category))]],
+      ])
+        for (const v of values) {
+          const o = node('option', v);
+          o.value = v;
+          q('#' + id).append(o);
+        }
+      q('#meta').textContent = JSON.stringify(
+        {
+          schemaVersion: R.schemaVersion,
+          browser: R.browser,
+          platform: R.platform,
+          policy: R.policy,
+          pages: R.pages,
+          warnings: R.warnings,
+        },
+        null,
+        2,
+      );
+      function render() {
+        const filtered = R.findings.filter(
+          (f) =>
+            (!q('#severity').value || f.severity === q('#severity').value) &&
+            (!q('#device').value || f.device === q('#device').value) &&
+            (!q('#category').value || f.category === q('#category').value) &&
+            JSON.stringify(f).toLowerCase().includes(q('#search').value.toLowerCase()),
+        );
+        q('#count').textContent = filtered.length + ' of ' + R.findings.length + ' findings';
+        q('#findings').replaceChildren();
+        for (const f of filtered) {
+          const a = node('article');
+          a.append(
+            node('span', f.severity, 'badge ' + f.severity),
+            node('span', f.category, 'badge'),
+            node('small', Math.round(f.confidence * 100) + '% match confidence'),
+            node('h2', f.component + ' · ' + f.page),
+            node('p', f.explanation),
+          );
+          const e = R.evidence[f.evidenceId];
+          if (e) {
+            const imgs = node('div', undefined, 'images');
+            for (const [key, label] of [
+              ['reference', 'Production / reference'],
+              ['candidate', 'Stage / candidate'],
+              ['diff', 'Difference / pink highlights'],
+            ])
+              if (e[key]) {
+                const fig = node('figure'),
+                  im = node('img');
+                im.src = e[key];
+                im.alt = label + ' ' + f.component;
+                im.loading = 'lazy';
+                fig.append(node('figcaption', label), im);
+                imgs.append(fig);
+              }
+            a.append(imgs);
+          }
+          const details = node('details');
+          details.append(
+            node('summary', 'Inspect DOM / CSS / comparison evidence'),
+            node(
+              'pre',
+              JSON.stringify(
+                { expected: f.expected, actual: f.actual, details: f.details },
+                null,
+                2,
+              ),
+            ),
+          );
+          a.append(details);
+          q('#findings').append(a);
+        }
+        if (!filtered.length)
+          q('#findings').append(
+            node(
+              'div',
+              R.findings.length
+                ? 'No findings match these filters.'
+                : R.status === 'clean'
+                  ? 'No differences above policy thresholds.'
+                  : 'No confirmed differences. Inspect capture status; this is not a clean result.',
+              'empty',
+            ),
+          );
+      }
+      for (const id of ['search', 'severity', 'device', 'category'])
+        q('#' + id).addEventListener('input', render);
+      q('#export').onclick = () => {
+        const a = document.createElement('a'),
+          url = URL.createObjectURL(
+            new Blob([JSON.stringify(R, null, 2)], { type: 'application/json' }),
+          );
+        a.href = url;
+        a.download = 'results.json';
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      };
+      render();
+    </script>
+  </body>
+</html>

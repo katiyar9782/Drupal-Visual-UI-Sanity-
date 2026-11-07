@@ -1,0 +1,268 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["schemaVersion", "project", "environments"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
+    "mode": {
+      "enum": ["sitemap", "single"]
+    },
+    "sitemapUrl": {
+      "type": "string"
+    },
+    "paths": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "allowHttp": {
+      "type": "boolean"
+    },
+    "outputDir": {
+      "type": "string"
+    },
+    "environments": {
+      "type": "object",
+      "required": ["stage", "prod"],
+      "additionalProperties": false,
+      "properties": {
+        "stage": {
+          "type": "object",
+          "required": ["baseUrl"],
+          "additionalProperties": false,
+          "properties": {
+            "baseUrl": {
+              "type": "string"
+            },
+            "auth": {
+              "type": "object"
+            },
+            "assetOrigins": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "prod": {
+          "type": "object",
+          "required": ["baseUrl"],
+          "additionalProperties": false,
+          "properties": {
+            "baseUrl": {
+              "type": "string"
+            },
+            "auth": {
+              "type": "object"
+            },
+            "assetOrigins": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "devices": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "required": ["width", "height"],
+        "additionalProperties": false,
+        "properties": {
+          "width": {
+            "type": "integer",
+            "minimum": 240,
+            "maximum": 4096
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 240,
+            "maximum": 4096
+          },
+          "dpr": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 3
+          },
+          "isMobile": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "maxPages": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 1000
+        },
+        "concurrency": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 4
+        },
+        "sitemapDepth": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "maxSitemaps": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "timeoutMs": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 120000
+        },
+        "retries": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "maxComponents": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 500
+        },
+        "maxScrollSteps": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        }
+      }
+    },
+    "mapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "overrides": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "trailingSlash": {
+          "enum": ["preserve", "remove", "add"]
+        },
+        "include": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "exclude": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "detection": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "drupalParagraphs": {
+          "type": "boolean"
+        },
+        "semanticFallback": {
+          "type": "boolean"
+        },
+        "customSelectors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "capture": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "readySelector": {
+          "type": "string"
+        },
+        "masks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "redactSelectors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "settleMs": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5000
+        },
+        "maxImagePixels": {
+          "type": "integer",
+          "minimum": 1000,
+          "maximum": 40000000
+        }
+      }
+    },
+    "comparison": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "geometryTolerancePx": {
+          "type": "number",
+          "minimum": 0
+        },
+        "pixelThreshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "maxDiffPixelRatio": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "styles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "report": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "offlineHtml": {
+          "const": true
+        },
+        "includeScreenshots": {
+          "const": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-11-06T07-45-42-346Z-242d71",
+  "project": "Local Drupal sample",
+  "createdAt": "2026-11-06T07:45:42.348Z",
+  "platform": "linux x64",
+  "browser": "141.0.7390.37",
+  "policy": {
+    "geometryTolerancePx": 2,
+    "pixelThreshold": 0.1,
+    "maxDiffPixelRatio": 0.01,
+    "styles": [
+      "font-family",
+      "font-size",
+      "font-weight",
+      "line-height",
+      "padding",
+      "margin",
+      "color",
+      "background-color",
+      "display",
+      "object-fit"
+    ]
+  },
+  "pages": [
+    {
+      "pageId": "p0-desktop",
+      "stage": "https://stage-bs-drinksmart.sites-beamsuntory.com/",
+      "prod": "https://www.drinksmart.com/",
+      "device": "desktop",
+      "componentScan": {
+        "stage": {
+          "status": "not_run",
+          "attempt": null,
+          "components": [],
+          "captureStatus": "inconclusive",
+          "captureError": "AUTH_REQUIRED",
+          "reason": "Page navigation or stabilization failed before component detection."
+        },
+        "prod": {
+          "status": "not_run",
+          "attempt": null,
+          "components": [],
+          "captureStatus": "inconclusive",
+          "captureError": "HTTP_STATUS",
+          "reason": "Page navigation or stabilization failed before component detection."
+        }
+      },
+      "componentMatchingStatus": "not_run",
+      "componentMatches": [],
+      "status": "inconclusive",
+      "capture": {
+        "stage": "AUTH_REQUIRED",
+        "prod": "HTTP_STATUS"
+      }
+    }
+  ],
+  "findings": [],
+  "evidence": {},
+  "snapshots": [],
+  "warnings": [],
+  "capabilities": {
+    "paragraphs": true,
+    "semanticFallback": true,
+    "ai": false,
+    "interactions": false
+  },
+  "status": "inconclusive",
+  "exitCode": 3,
+  "summary": {
+    "pages": 1,
+    "findings": 0,
+    "high": 0,
+    "inconclusive": 1
+  }
+}

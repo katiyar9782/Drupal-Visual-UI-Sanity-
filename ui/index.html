@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="ui-token" content="__TOKEN__" />
+    <title>Visual UI Studio · v1.2 SSO</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <aside>
+      <div class="brand"><b>◈</b> Visual UI Studio</div>
+      <p class="caption">DRUPAL QUALITY WORKSPACE</p>
+      <nav>
+        <a href="#setup" class="active">01 &nbsp; Compare websites</a
+        ><a href="#results">02 &nbsp; Results</a><a href="#history">03 &nbsp; Previous runs</a>
+      </nav>
+      <div class="aside-bottom">
+        <span class="dot"></span> Runs on your computer
+        <p>Stage → Production<br />No Drupal source changes.</p>
+      </div>
+    </aside>
+    <main>
+      <header>
+        <span class="eyebrow">VISUAL REGRESSION TESTING</span>
+        <h1>Catch the changes.<br /><span>Keep the confidence.</span></h1>
+        <p>Paste your sitemap, choose the reference website, and compare your Drupal components.</p>
+        <div class="header-actions">
+          <button id="demo" type="button" class="secondary">Try local sample</button
+          ><button id="install" type="button" class="secondary">Install / repair browser</button>
+        </div>
+      </header>
+      <div id="notice" role="alert" hidden></div>
+      <section id="setup" class="panel">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">01 / CONNECT</span>
+            <h2>Your websites</h2>
+          </div>
+          <span class="pill">Local & private</span>
+        </div>
+        <form id="form">
+          <label
+            >Project name<input
+              name="project"
+              placeholder="e.g. Drinksmart release review"
+              value="My Drupal website"
+              maxlength="100"
+          /></label>
+          <div class="columns">
+            <div class="environment">
+              <h3><span class="tag">A</span> Stage <small>What changed</small></h3>
+              <label
+                >Sitemap URL<input
+                  name="sitemapUrl"
+                  type="url"
+                  required
+                  placeholder="https://stage.example.com/sitemap.xml"
+              /></label>
+              <p class="help">The Stage address is detected from this URL.</p>
+              <label
+                >Access<select name="stageAuth">
+                  <option value="none">Public website</option>
+                  <option value="httpBasic">Username & password (Basic Auth)</option>
+                  <option value="browserSession">Microsoft / SSO — sign in with browser</option>
+                </select></label
+              >
+              <div id="stageBrowserAuth" class="browser-auth" hidden>
+                <p id="stageSessionStatus" class="help" aria-live="polite">Not signed in.</p>
+                <div class="auth-actions">
+                  <button type="button" id="stageSignIn" class="secondary">Sign in to Stage</button
+                  ><button type="button" id="stageVerify" class="secondary">Verify sign-in</button
+                  ><button type="button" id="stageDisconnect" class="secondary">Disconnect</button>
+                </div>
+                <p class="help">
+                  Complete login and MFA in the separate browser, then click Verify sign-in here. No
+                  Microsoft password is collected by this form.
+                </p>
+                <details>
+                  <summary>Additional organization login origins</summary>
+                  <textarea
+                    name="stageLoginOrigins"
+                    placeholder="https://sso.your-company.com"
+                  ></textarea>
+                  <p class="help">
+                    Only needed for a blocked federated identity provider. Enter an exact trusted
+                    origin; this applies only during interactive sign-in.
+                  </p>
+                </details>
+              </div>
+              <div id="stageCredentials" hidden>
+                <label>Username<input name="stageUser" autocomplete="off" /></label
+                ><label
+                  >Password<input name="stagePass" type="password" autocomplete="off"
+                /></label>
+              </div>
+            </div>
+            <div class="environment">
+              <h3><span class="tag prod">B</span> Production <small>Your reference</small></h3>
+              <label
+                >Production website URL<input
+                  name="prodUrl"
+                  type="url"
+                  required
+                  placeholder="https://www.example.com"
+              /></label>
+              <p class="help">Each Stage path is compared with the same Production path.</p>
+              <label
+                >Access<select name="prodAuth">
+                  <option value="none">Public website</option>
+                  <option value="httpBasic">Username & password (Basic Auth)</option>
+                  <option value="browserSession">Microsoft / SSO — sign in with browser</option>
+                </select></label
+              >
+              <div id="prodBrowserAuth" class="browser-auth" hidden>
+                <p id="prodSessionStatus" class="help" aria-live="polite">Not signed in.</p>
+                <div class="auth-actions">
+                  <button type="button" id="prodSignIn" class="secondary">
+                    Sign in to Production</button
+                  ><button type="button" id="prodVerify" class="secondary">Verify sign-in</button
+                  ><button type="button" id="prodDisconnect" class="secondary">Disconnect</button>
+                </div>
+                <p class="help">
+                  Complete login and MFA in the separate browser, then click Verify sign-in here. No
+                  Microsoft password is collected by this form.
+                </p>
+                <details>
+                  <summary>Additional organization login origins</summary>
+                  <textarea
+                    name="prodLoginOrigins"
+                    placeholder="https://sso.your-company.com"
+                  ></textarea>
+                  <p class="help">
+                    Only needed for a blocked federated identity provider. Enter an exact trusted
+                    origin; this applies only during interactive sign-in.
+                  </p>
+                </details>
+              </div>
+              <div id="prodCredentials" hidden>
+                <label>Username<input name="prodUser" autocomplete="off" /></label
+                ><label>Password<input name="prodPass" type="password" autocomplete="off" /></label>
+              </div>
+            </div>
+          </div>
+          <div class="options">
+            <label
+              >Maximum pages<input
+                name="maxPages"
+                type="number"
+                min="1"
+                max="1000"
+                value="5"
+                required
+            /></label>
+            <fieldset>
+              <legend>Devices</legend>
+              <label class="check"><input name="desktop" type="checkbox" checked /> Desktop</label
+              ><label class="check"><input name="mobile" type="checkbox" checked /> Mobile</label>
+            </fieldset>
+          </div>
+          <details>
+            <summary>Advanced options</summary>
+            <div class="columns">
+              <label
+                >Stage CDN origins
+                <textarea
+                  name="stageAssets"
+                  placeholder="https://cdn.example.com"
+                ></textarea></label
+              ><label
+                >Production CDN origins<textarea
+                  name="prodAssets"
+                  placeholder="https://cdn.example.com"
+                ></textarea></label
+              ><label
+                >Different page paths<textarea
+                  name="overrides"
+                  placeholder="/about-new => /about"
+                ></textarea></label
+              ><label
+                >Ignore dynamic areas (CSS selectors)<textarea
+                  name="masks"
+                  placeholder=".rotating-banner&#10;.live-price"
+                ></textarea>
+              </label>
+            </div>
+            <label class="check"
+              ><input name="allowHttp" type="checkbox" /> Allow HTTP (for local or explicitly
+              trusted environments)</label
+            >
+            <p class="help">
+              Basic Auth is the browser login popup. For Microsoft SSO, select browser sign-in
+              above. The signed-in session is retained in memory only; app restart requires signing
+              in again.
+            </p>
+          </details>
+          <div class="form-footer">
+            <span class="help">Passwords stay in memory and are not saved with settings.</span>
+            <div>
+              <button type="button" id="fetch" class="secondary">Fetch pages</button
+              ><button type="submit" id="run">Compare websites →</button>
+            </div>
+          </div>
+        </form>
+      </section>
+      <section id="results" class="panel">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">02 / INSPECT</span>
+            <h2>Results & progress</h2>
+          </div>
+          <div>
+            <button id="cancel" type="button" class="secondary" hidden>Cancel task</button>
+            <span id="state" class="pill">Ready</span>
+          </div>
+        </div>
+        <p id="progress" aria-live="polite">
+          Your next comparison starts here. Fetch pages to preview the URL pairs, or compare
+          directly.
+        </p>
+        <div id="summary" class="stats"></div>
+        <div id="reportLinks"></div>
+        <div class="table-wrap">
+          <table id="pages" hidden>
+            <thead>
+              <tr>
+                <th>Stage page</th>
+                <th>Production reference</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <p id="warnings" class="help"></p>
+      </section>
+      <section id="history" class="panel">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">03 / REVISIT</span>
+            <h2>Previous comparisons</h2>
+          </div>
+          <button type="button" id="refresh" class="secondary">Refresh</button>
+        </div>
+        <div id="historyList">No comparisons yet.</div>
+      </section>
+      <footer>
+        Differences need review: an intentional release change can also appear as a regression.
+        Incomplete captures are marked inconclusive.
+      </footer>
+    </main>
+  </body>
+</html>

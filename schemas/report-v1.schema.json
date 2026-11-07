@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Drupal UI Regression Report v1",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "project",
+    "createdAt",
+    "status",
+    "summary",
+    "pages",
+    "findings",
+    "evidence"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "project": { "type": "string" },
+    "status": { "enum": ["clean", "review", "regressions", "inconclusive", "simulated"] },
+    "createdAt": { "type": "string" },
+    "pages": { "type": "array", "items": { "type": "object" } },
+    "summary": { "type": "object" },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "reference": { "type": "string", "pattern": "^data:image/png;base64," },
+          "candidate": { "type": "string", "pattern": "^data:image/png;base64," },
+          "diff": { "type": "string", "pattern": "^data:image/png;base64," }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "category", "severity", "confidence", "explanation"],
+        "properties": {
+          "id": { "type": "string" },
+          "category": { "type": "string" },
+          "severity": { "enum": ["critical", "high", "medium", "low", "review"] },
+          "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+          "explanation": { "type": "string" }
+        }
+      }
+    }
+  }
+}

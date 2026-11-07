@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-11-06T07-59-52-246Z-63356e",
+  "project": "Local Drupal sample",
+  "createdAt": "2026-11-06T07:59:52.247Z",
+  "platform": "linux x64",
+  "browser": "141.0.7390.37",
+  "policy": {
+    "geometryTolerancePx": 2,
+    "pixelThreshold": 0.1,
+    "maxDiffPixelRatio": 0.01,
+    "styles": [
+      "font-family",
+      "font-size",
+      "font-weight",
+      "line-height",
+      "padding",
+      "margin",
+      "color",
+      "background-color",
+      "display",
+      "object-fit"
+    ]
+  },
+  "pages": [
+    {
+      "pageId": "p0-desktop",
+      "stage": "https://stage-bs-drinksmart.sites-beamsuntory.com/",
+      "prod": "https://www.drinksmart.com/",
+      "device": "desktop",
+      "componentScan": {
+        "stage": {
+          "status": "not_run",
+          "attempt": null,
+          "components": [],
+          "captureStatus": "inconclusive",
+          "captureError": "HTTP_STATUS",
+          "reason": "Page navigation or stabilization failed before component detection."
+        },
+        "prod": {
+          "status": "not_run",
+          "attempt": null,
+          "components": [],
+          "captureStatus": "inconclusive",
+          "captureError": "HTTP_STATUS",
+          "reason": "Page navigation or stabilization failed before component detection."
+        }
+      },
+      "componentMatchingStatus": "not_run",
+      "componentMatches": [],
+      "status": "inconclusive",
+      "capture": {
+        "stage": "HTTP_STATUS",
+        "prod": "HTTP_STATUS"
+      },
+      "captureDetails": {
+        "stage": {
+          "status": "inconclusive",
+          "code": "HTTP_STATUS",
+          "httpStatus": 403,
+          "finalUrl": "https://stage-bs-drinksmart.sites-beamsuntory.com/",
+          "blockedNavigation": null,
+          "attempts": 2
+        },
+        "prod": {
+          "status": "inconclusive",
+          "code": "HTTP_STATUS",
+          "httpStatus": 403,
+          "finalUrl": "https://www.drinksmart.com/",
+          "blockedNavigation": null,
+          "attempts": 2
+        }
+      }
+    }
+  ],
+  "findings": [],
+  "evidence": {},
+  "snapshots": [],
+  "warnings": [],
+  "capabilities": {
+    "paragraphs": true,
+    "semanticFallback": true,
+    "ai": false,
+    "interactions": false
+  },
+  "status": "inconclusive",
+  "exitCode": 3,
+  "summary": {
+    "pages": 1,
+    "findings": 0,
+    "high": 0,
+    "inconclusive": 1
+  }
+}

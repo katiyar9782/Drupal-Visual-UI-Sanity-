@@ -1,0 +1,26 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> drupal-ui-regression@1.0.0 test:unit
+> node --test tests/discovery.test.js tests/match.test.js tests/compare.test.js tests/report.test.js tests/dom.test.js tests/cli.test.js
+
+✔ M7 CLI validates config and writes inconclusive report on unavailable browser (1285.101927ms)
+✔ M5 pixel comparison preserves size differences and detects color mutation (36.551898ms)
+✔ M5 CSS, content, geometry, broken asset channels remain independent (0.46302ms)
+✔ M0 rejects unsafe and malformed config (3.841056ms)
+✔ M1 maps URL paths/query safely and applies overrides/slashes (0.697314ms)
+✔ M1 recursive sitemap, deduplication, limits, rejection, malformed XML and auth (71.097538ms)
+✔ M3 detector DOM logic (synthetic geometry; not browser rendering) (207.930728ms)
+✔ M6 standalone report scripts and filters execute in jsdom (60.460453ms)
+✔ M4 insertion/reorder never shifts existing matches (1.738749ms)
+✔ M4 repeated identical headings remain ambiguous (1.109627ms)
+✔ M4 changed heading with unique type pairs; removal is explicit (0.938959ms)
+✔ M6 report embeds data safely without external dependencies (1.942407ms)
+✔ M7 exit status distinguishes uncertainty from regressions (0.40329ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1381.047155

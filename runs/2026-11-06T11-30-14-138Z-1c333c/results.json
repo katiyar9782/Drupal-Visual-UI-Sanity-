@@ -1,0 +1,395 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-11-06T11-30-14-138Z-1c333c",
+  "project": "Drink Smart Lazy-loading Issue Check",
+  "createdAt": "2026-11-06T11:30:14.142Z",
+  "platform": "linux x64",
+  "browser": "141.0.7390.37",
+  "policy": {
+    "geometryTolerancePx": 2,
+    "pixelThreshold": 0.1,
+    "maxDiffPixelRatio": 0.01,
+    "styles": [
+      "font-family",
+      "font-size",
+      "font-weight",
+      "line-height",
+      "padding",
+      "margin",
+      "color",
+      "background-color",
+      "display",
+      "object-fit"
+    ]
+  },
+  "pages": [
+    {
+      "pageId": "p0-desktop",
+      "stage": "https://stage-bs-drinksmart.sites-beamsuntory.com/",
+      "prod": "https://www.drinksmart.com/",
+      "device": "desktop",
+      "componentScan": {
+        "stage": {
+          "status": "not_run",
+          "attempt": null,
+          "components": [],
+          "captureStatus": "inconclusive",
+          "captureError": "UNSTABLE_LAYOUT",
+          "reason": "Page navigation or stabilization failed before component detection."
+        },
+        "prod": {
+          "status": "completed",
+          "attempt": 2,
+          "components": [
+            {
+              "id": "c0",
+              "type": "semantic:header",
+              "heading": "",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 0,
+                "width": 1425,
+                "height": 72
+              }
+            },
+            {
+              "id": "c1",
+              "type": "homepage_header_section",
+              "heading": "WELCOME TO DRINK SMART®",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 72,
+                "width": 1425,
+                "height": 656
+              }
+            },
+            {
+              "id": "c2",
+              "type": "copy_image",
+              "heading": "RESPONSIBILITY ULTIMATELY STARTS WITH EACH OF US",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(2) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 728,
+                "width": 1425,
+                "height": 488
+              }
+            },
+            {
+              "id": "c3",
+              "type": "copy_image",
+              "heading": "",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(3) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 1216,
+                "width": 1425,
+                "height": 563
+              }
+            },
+            {
+              "id": "c4",
+              "type": "expert_review_sub_section",
+              "heading": "",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(4) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 1779,
+                "width": 1425,
+                "height": 424
+              }
+            },
+            {
+              "id": "c5",
+              "type": "semantic:footer",
+              "heading": "",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > footer:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 2203,
+                "width": 1425,
+                "height": 736
+              }
+            }
+          ],
+          "captureStatus": "inconclusive",
+          "captureError": "COMPONENT_CHANGED_DURING_CAPTURE"
+        }
+      },
+      "componentMatchingStatus": "not_run",
+      "componentMatches": [],
+      "status": "inconclusive",
+      "capture": {
+        "stage": "UNSTABLE_LAYOUT",
+        "prod": "COMPONENT_CHANGED_DURING_CAPTURE"
+      },
+      "captureDetails": {
+        "stage": {
+          "status": "inconclusive",
+          "code": "UNSTABLE_LAYOUT",
+          "httpStatus": 200,
+          "finalUrl": "https://stage-bs-drinksmart.sites-beamsuntory.com/",
+          "blockedNavigation": null,
+          "attempts": 2
+        },
+        "prod": {
+          "status": "inconclusive",
+          "code": "COMPONENT_CHANGED_DURING_CAPTURE",
+          "httpStatus": 200,
+          "finalUrl": "https://www.drinksmart.com/",
+          "blockedNavigation": null,
+          "attempts": 2
+        }
+      }
+    },
+    {
+      "pageId": "p1-desktop",
+      "stage": "https://stage-bs-drinksmart.sites-beamsuntory.com/education-and-resources/preventing-underage-drinking",
+      "prod": "https://www.drinksmart.com/education-and-resources/preventing-underage-drinking",
+      "device": "desktop",
+      "componentScan": {
+        "stage": {
+          "status": "completed",
+          "attempt": 1,
+          "components": [
+            {
+              "id": "c0",
+              "type": "semantic:header",
+              "heading": "",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 0,
+                "width": 1425,
+                "height": 72
+              }
+            },
+            {
+              "id": "c1",
+              "type": "page_header",
+              "heading": "PREVENTING UNDERAGE DRINKING",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 72,
+                "width": 1425,
+                "height": 649.15625
+              }
+            },
+            {
+              "id": "c2",
+              "type": "copy_image",
+              "heading": "CHANGING THE FUTURE THROUGH CONVERSATION",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 721.15625,
+                "width": 1425,
+                "height": 525
+              }
+            },
+            {
+              "id": "c3",
+              "type": "timeline",
+              "heading": "UNDERAGE AND TEENAGE DRINKING FACTS",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 1246.15625,
+                "width": 1425,
+                "height": 2394
+              }
+            },
+            {
+              "id": "c4",
+              "type": "copy_image",
+              "heading": "CONVERSATIONS HAVE THE LARGEST IMPACTS ON TEENAGE DRINKING",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(4) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 3640.15625,
+                "width": 1425,
+                "height": 334
+              }
+            },
+            {
+              "id": "c5",
+              "type": "semantic:footer",
+              "heading": "",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > footer:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 3974.15625,
+                "width": 1425,
+                "height": 736
+              }
+            }
+          ],
+          "captureStatus": "inconclusive",
+          "captureError": "UNSTABLE_LAYOUT"
+        },
+        "prod": {
+          "status": "completed",
+          "attempt": 2,
+          "components": [
+            {
+              "id": "c0",
+              "type": "semantic:header",
+              "heading": "",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > header:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 0,
+                "width": 1425,
+                "height": 72
+              }
+            },
+            {
+              "id": "c1",
+              "type": "page_header",
+              "heading": "PREVENTING UNDERAGE DRINKING",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(1) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 72,
+                "width": 1425,
+                "height": 649.15625
+              }
+            },
+            {
+              "id": "c2",
+              "type": "copy_image",
+              "heading": "CHANGING THE FUTURE THROUGH CONVERSATION",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(2) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 721.15625,
+                "width": 1425,
+                "height": 525
+              }
+            },
+            {
+              "id": "c3",
+              "type": "timeline",
+              "heading": "UNDERAGE AND TEENAGE DRINKING FACTS",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(3) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 1246.15625,
+                "width": 1425,
+                "height": 2394
+              }
+            },
+            {
+              "id": "c4",
+              "type": "copy_image",
+              "heading": "CONVERSATIONS HAVE THE LARGEST IMPACTS ON TEENAGE DRINKING",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > main:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(3) > div:nth-of-type(1) > div:nth-of-type(4) > section:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 3640.15625,
+                "width": 1425,
+                "height": 334
+              }
+            },
+            {
+              "id": "c5",
+              "type": "semantic:footer",
+              "heading": "",
+              "selector": "html:nth-of-type(1) > body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > footer:nth-of-type(1)",
+              "parentId": null,
+              "siblingIndex": 0,
+              "bbox": {
+                "x": 0,
+                "y": 3974.15625,
+                "width": 1425,
+                "height": 736
+              }
+            }
+          ],
+          "captureStatus": "inconclusive",
+          "captureError": "COMPONENT_CHANGED_DURING_CAPTURE"
+        }
+      },
+      "componentMatchingStatus": "not_run",
+      "componentMatches": [],
+      "status": "inconclusive",
+      "capture": {
+        "stage": "UNSTABLE_LAYOUT",
+        "prod": "COMPONENT_CHANGED_DURING_CAPTURE"
+      },
+      "captureDetails": {
+        "stage": {
+          "status": "inconclusive",
+          "code": "UNSTABLE_LAYOUT",
+          "httpStatus": 200,
+          "finalUrl": "https://stage-bs-drinksmart.sites-beamsuntory.com/education-and-resources/preventing-underage-drinking",
+          "blockedNavigation": null,
+          "attempts": 2
+        },
+        "prod": {
+          "status": "inconclusive",
+          "code": "COMPONENT_CHANGED_DURING_CAPTURE",
+          "httpStatus": 200,
+          "finalUrl": "https://www.drinksmart.com/education-and-resources/preventing-underage-drinking",
+          "blockedNavigation": null,
+          "attempts": 2
+        }
+      }
+    }
+  ],
+  "findings": [],
+  "evidence": {},
+  "snapshots": [],
+  "warnings": [],
+  "capabilities": {
+    "paragraphs": true,
+    "semanticFallback": true,
+    "ai": false,
+    "interactions": false
+  },
+  "status": "inconclusive",
+  "exitCode": 3,
+  "summary": {
+    "pages": 2,
+    "findings": 0,
+    "high": 0,
+    "inconclusive": 2
+  }
+}

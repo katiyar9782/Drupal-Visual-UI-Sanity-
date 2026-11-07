@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-11-06T07-24-52-965Z-93c76b",
+  "project": "Local Drupal sample",
+  "createdAt": "2026-11-06T07:24:52.967Z",
+  "platform": "linux x64",
+  "browser": "141.0.7390.37",
+  "policy": {
+    "geometryTolerancePx": 2,
+    "pixelThreshold": 0.1,
+    "maxDiffPixelRatio": 0.01,
+    "styles": [
+      "font-family",
+      "font-size",
+      "font-weight",
+      "line-height",
+      "padding",
+      "margin",
+      "color",
+      "background-color",
+      "display",
+      "object-fit"
+    ]
+  },
+  "pages": [
+    {
+      "pageId": "p0-desktop",
+      "stage": "https://stage-bs-drinksmart.sites-beamsuntory.com/",
+      "prod": "https://www.drinksmart.com/",
+      "device": "desktop",
+      "componentMatchingStatus": "not_run",
+      "componentMatches": [],
+      "status": "inconclusive",
+      "capture": {
+        "stage": "AUTH_REQUIRED",
+        "prod": "HTTP_STATUS"
+      }
+    }
+  ],
+  "findings": [],
+  "evidence": {},
+  "snapshots": [],
+  "warnings": [],
+  "capabilities": {
+    "paragraphs": true,
+    "semanticFallback": true,
+    "ai": false,
+    "interactions": false
+  },
+  "status": "inconclusive",
+  "exitCode": 3,
+  "summary": {
+    "pages": 1,
+    "findings": 0,
+    "high": 0,
+    "inconclusive": 1
+  }
+}

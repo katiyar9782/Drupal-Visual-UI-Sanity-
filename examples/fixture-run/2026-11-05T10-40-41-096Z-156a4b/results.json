@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-11-05T10-40-41-096Z-156a4b",
+  "project": "Drupal local fixtures",
+  "createdAt": "2026-11-05T10:40:41.097Z",
+  "platform": "linux x64",
+  "browser": "unavailable",
+  "policy": {
+    "geometryTolerancePx": 2,
+    "pixelThreshold": 0.1,
+    "maxDiffPixelRatio": 0.01,
+    "styles": [
+      "font-family",
+      "font-size",
+      "font-weight",
+      "line-height",
+      "padding",
+      "margin",
+      "color",
+      "background-color",
+      "display",
+      "object-fit"
+    ]
+  },
+  "pages": [
+    {
+      "pageId": "p0-desktop",
+      "stage": "http://127.0.0.1:4171/home",
+      "prod": "http://127.0.0.1:4172/home",
+      "device": "desktop",
+      "status": "inconclusive",
+      "code": "BROWSER_UNAVAILABLE"
+    },
+    {
+      "pageId": "p0-mobile",
+      "stage": "http://127.0.0.1:4171/home",
+      "prod": "http://127.0.0.1:4172/home",
+      "device": "mobile",
+      "status": "inconclusive",
+      "code": "BROWSER_UNAVAILABLE"
+    },
+    {
+      "pageId": "p1-desktop",
+      "stage": "http://127.0.0.1:4171/about",
+      "prod": "http://127.0.0.1:4172/about",
+      "device": "desktop",
+      "status": "inconclusive",
+      "code": "BROWSER_UNAVAILABLE"
+    },
+    {
+      "pageId": "p1-mobile",
+      "stage": "http://127.0.0.1:4171/about",
+      "prod": "http://127.0.0.1:4172/about",
+      "device": "mobile",
+      "status": "inconclusive",
+      "code": "BROWSER_UNAVAILABLE"
+    },
+    {
+      "pageId": "p2-desktop",
+      "stage": "http://127.0.0.1:4171/services",
+      "prod": "http://127.0.0.1:4172/services",
+      "device": "desktop",
+      "status": "inconclusive",
+      "code": "BROWSER_UNAVAILABLE"
+    },
+    {
+      "pageId": "p2-mobile",
+      "stage": "http://127.0.0.1:4171/services",
+      "prod": "http://127.0.0.1:4172/services",
+      "device": "mobile",
+      "status": "inconclusive",
+      "code": "BROWSER_UNAVAILABLE"
+    },
+    {
+      "pageId": "p3-desktop",
+      "stage": "http://127.0.0.1:4171/news",
+      "prod": "http://127.0.0.1:4172/news",
+      "device": "desktop",
+      "status": "inconclusive",
+      "code": "BROWSER_UNAVAILABLE"
+    },
+    {
+      "pageId": "p3-mobile",
+      "stage": "http://127.0.0.1:4171/news",
+      "prod": "http://127.0.0.1:4172/news",
+      "device": "mobile",
+      "status": "inconclusive",
+      "code": "BROWSER_UNAVAILABLE"
+    },
+    {
+      "pageId": "p4-desktop",
+      "stage": "http://127.0.0.1:4171/contact",
+      "prod": "http://127.0.0.1:4172/contact",
+      "device": "desktop",
+      "status": "inconclusive",
+      "code": "BROWSER_UNAVAILABLE"
+    },
+    {
+      "pageId": "p4-mobile",
+      "stage": "http://127.0.0.1:4171/contact",
+      "prod": "http://127.0.0.1:4172/contact",
+      "device": "mobile",
+      "status": "inconclusive",
+      "code": "BROWSER_UNAVAILABLE"
+    }
+  ],
+  "findings": [],
+  "evidence": {},
+  "snapshots": [],
+  "warnings": [
+    "Chromium could not launch. Install the pinned browser and OS dependencies.",
+    "External or invalid sitemap page rejected"
+  ],
+  "capabilities": {
+    "paragraphs": true,
+    "semanticFallback": true,
+    "ai": false,
+    "interactions": false
+  },
+  "status": "inconclusive",
+  "exitCode": 3,
+  "summary": {
+    "pages": 10,
+    "findings": 0,
+    "high": 0,
+    "inconclusive": 10
+  }
+}
